@@ -8,6 +8,7 @@ import com.example.movieapi.databinding.MainActivityBinding
 import com.example.movieapi.models.Show
 import com.example.movieapi.ui.main.list.PopularShowViewHolder
 import com.example.movieapi.ui.main.list.PopularShowsListAdapter
+import com.skydoves.baserecyclerviewadapter.RecyclerViewPaginator
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.main_activity.*
 
@@ -25,9 +26,21 @@ class MainActivity: ViewModelActivity(), PopularShowViewHolder.OnClickListener{
 
         recyclerView.adapter = PopularShowsListAdapter(this)
         recyclerView.layoutManager = GridLayoutManager(applicationContext, 2)
+        val paginator = RecyclerViewPaginator(
+            recyclerView = recyclerView,
+            isLoading = { false },
+            loadMore = { loadMore(it) },
+            onLast = { false }
+        )
+        paginator.currentPage = 1
+        loadMore(1)
     }
 
     override fun onItemClick(show: Show) {
         //Do nothing
+    }
+
+    fun loadMore(page: Int) {
+        vm.loadShowsPage(page)
     }
 }

@@ -1,6 +1,5 @@
 package com.example.movieapi.repository
 
-import androidx.annotation.MainThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.example.movieapi.models.Show
@@ -14,8 +13,8 @@ constructor(val movieService: MovieService): Repository {
 
     private val result: MediatorLiveData<List<Show>> = MediatorLiveData()
 
-    fun loadPopularShows(): LiveData<List<Show>> {
-        val popularShowsResponse = movieService.fetchPopularShows()
+    fun loadPopularShows(page: Int): LiveData<List<Show>> {
+        val popularShowsResponse = movieService.fetchPopularShows(page)
         result.addSource(popularShowsResponse) {response ->
             when (response.isSuccessful) {
                 true ->
