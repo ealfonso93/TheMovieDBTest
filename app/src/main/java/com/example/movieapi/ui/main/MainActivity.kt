@@ -1,10 +1,10 @@
-package com.example.movieapi
+package com.example.movieapi.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.movieapi.ui.main.MainFragment
+import com.example.movieapi.R
+import dagger.android.support.DaggerAppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
