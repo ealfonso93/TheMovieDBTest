@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface MovieService {
 
-    @GET("/tv/popular?language=en")
+    @GET("tv/popular?language=en-US")
     fun fetchPopularShows(): LiveData<ApiResponse<PopularShowResponse>>
 }
