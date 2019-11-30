@@ -47,6 +47,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.recyclerview:recyclerview:$androidxVersion"
+    implementation "androidx.cardview:cardview:$cardViewVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
