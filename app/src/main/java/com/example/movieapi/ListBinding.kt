@@ -2,15 +2,15 @@ package com.example.movieapi
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movieapi.models.Resource
 import com.example.movieapi.models.Show
 import com.example.movieapi.ui.main.list.PopularShowsListAdapter
 
 @BindingAdapter("adapterPopularShows")
-fun bindPopularShowsRecylcerView(view: RecyclerView, shows: List<Show>?) {
+fun bindPopularShowsRecylcerView(view: RecyclerView, shows: Resource<List<Show>>?) {
 
-    shows?.let {showsList ->
+    shows?.data?.let {
         val adapter = view.adapter as? PopularShowsListAdapter
-        adapter?.addShows(showsList)
+        adapter?.addShows(it)
     }
-
 }
