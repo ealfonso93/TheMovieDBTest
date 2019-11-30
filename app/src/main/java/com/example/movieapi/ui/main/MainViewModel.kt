@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.example.movieapi.models.Resource
 import com.example.movieapi.models.Show
 import com.example.movieapi.repository.MovieRepository
 import com.example.movieapi.utils.EmptyLiveData
@@ -14,7 +15,7 @@ constructor(
     private val movieRepository: MovieRepository
 ) : ViewModel() {
 
-    val showsListLiveData: LiveData<List<Show>>
+    val showsListLiveData: LiveData<Resource<List<Show>>>
     private var currentPageLiveData: MutableLiveData<Int> = MutableLiveData()
 
     init {
@@ -26,4 +27,6 @@ constructor(
     fun loadShowsPage(page: Int) {
         currentPageLiveData.postValue(page)
     }
+
+    fun getShowListValues() = showsListLiveData.value
 }

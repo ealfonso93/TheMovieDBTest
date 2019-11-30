@@ -1,11 +1,13 @@
 package com.example.movieapi.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movieapi.R
 import com.example.movieapi.base.ViewModelActivity
 import com.example.movieapi.databinding.MainActivityBinding
 import com.example.movieapi.models.Show
+import com.example.movieapi.models.Status
 import com.example.movieapi.ui.main.list.PopularShowViewHolder
 import com.example.movieapi.ui.main.list.PopularShowsListAdapter
 import com.skydoves.baserecyclerviewadapter.RecyclerViewPaginator
@@ -28,11 +30,12 @@ class MainActivity: ViewModelActivity(), PopularShowViewHolder.OnClickListener{
         recyclerView.layoutManager = GridLayoutManager(applicationContext, 2)
         val paginator = RecyclerViewPaginator(
             recyclerView = recyclerView,
-            isLoading = { false },
+            isLoading = { vm.getShowListValues()?.status == Status.LOADING },
             loadMore = { loadMore(it) },
-            onLast = { false }
+            onLast = { vm.getShowListValues()?.onLastPage ?: false }
         )
         paginator.currentPage = 1
+        paginator.threshold = 3
         loadMore(1)
     }
 
