@@ -3,6 +3,7 @@ package com.example.movieapi.injection
 import android.graphics.Movie
 import androidx.annotation.NonNull
 import com.example.movieapi.BuildConfig
+import com.example.movieapi.network.ApiKeyInterceptor
 import com.example.movieapi.network.MovieService
 import dagger.Module
 import dagger.Provides
@@ -17,7 +18,9 @@ class NetworkingModule {
     @Provides
     @Singleton
     fun provideHttpClient(): OkHttpClient {
-        return OkHttpClient.Builder().build()
+        return OkHttpClient.Builder()
+            .addInterceptor(ApiKeyInterceptor())
+            .build()
     }
 
     @Provides
