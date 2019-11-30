@@ -17,7 +17,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "API_KEY", "\"5d967c7c335764f39b1efbe9c5de9760\""
         buildConfigField "String", "API_HOST", "\"https://api.themoviedb.org/3/\""
-        buildConfigField "String", "POST_HOST", "\"https://image.tmdb.org/t/p/w500\""
+        buildConfigField "String", "POST_HOST", "\"https://image.tmdb.org/t/p/w342\""
     }
     kotlinOptions {
         jvmTarget = "1.8"
