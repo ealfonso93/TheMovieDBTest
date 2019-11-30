@@ -1,6 +1,6 @@
 package com.example.movieapi.injection
 
-import com.example.movieapi.MainActivity
+import com.example.movieapi.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
