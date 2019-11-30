@@ -4,6 +4,7 @@ import android.graphics.Movie
 import androidx.annotation.NonNull
 import com.example.movieapi.BuildConfig
 import com.example.movieapi.network.ApiKeyInterceptor
+import com.example.movieapi.network.LiveDataCallAdapterFactory
 import com.example.movieapi.network.MovieService
 import dagger.Module
 import dagger.Provides
@@ -30,6 +31,7 @@ class NetworkingModule {
             .client(okHttpClient)
             .baseUrl(BuildConfig.API_HOST)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .build()
     }
 
