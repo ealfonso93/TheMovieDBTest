@@ -19,7 +19,7 @@ class MovieServiceTest: ApiTestHelper<MovieService>() {
     @Test
     fun fetchPopularShowsTest() {
         enqueueResponse("/popular_shows.json")
-        val response = LiveDataTestHelper.getValue(service.fetchPopularShows())
+        val response = LiveDataTestHelper.getValue(service.fetchPopularShows(1))
         assertEquals(response.body?.results?.get(0)?.id, 82856)
         assertEquals(response.body?.total_results, 10000)
         assertEquals(response.body?.total_pages, 500)

@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.movieapi.models.PopularShowResponse
+import com.example.movieapi.models.Resource
 import com.example.movieapi.models.Show
 import com.example.movieapi.network.ApiResponse
 import com.example.movieapi.network.MovieService
@@ -37,18 +38,18 @@ class MovieRepositoryTest {
     fun loadPopularTvShows() {
         val mockResponse = PopularShowResponse(1, emptyList(), 288, 100)
         val call = successfulCall(mockResponse)
-        whenever(movieService.fetchPopularShows()).thenReturn(call)
+        whenever(movieService.fetchPopularShows(1)).thenReturn(call)
 
-        val resp = repository.loadPopularShows()
-        val observer = mock<Observer<List<Show>>>()
+        val resp = repository.loadPopularShows(1)
+        val observer = mock<Observer<Resource<List<Show>>>>()
         resp.observeForever(observer)
         val results = MutableLiveData<List<Show>>()
 
-        verify(movieService).fetchPopularShows()
+        verify(movieService).fetchPopularShows(1)
 
         results.postValue(mockResponse.results)
-        verify(observer).onChanged(mockResponse.results)
-        verify(movieService).fetchPopularShows()
+        verify(observer).onChanged(Resource.success(mockResponse.results, false))
+        verify(movieService).fetchPopularShows(1)
     }
 
     fun <T: Any> successfulCall(data: T): LiveData<ApiResponse<T>> {
