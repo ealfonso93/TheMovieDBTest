@@ -12,6 +12,8 @@ buildscript {
         lifecycleVersion = '2.0.0'
         archCompVersion = '2.1.0'
         mockitoKotlinVersion = '2.2.0'
+        androidActivity = '1.0.0'
+        androidxVersion = '1.1.0'
     }
 
     repositories {

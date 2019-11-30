@@ -34,11 +34,13 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
     implementation "androidx.core:core-ktx:$appcompatVersion"
+    implementation "androidx.activity:activity:$androidActivity"
+    implementation "androidx.activity:activity-ktx:$androidActivity"
+
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
-    implementation "androidx.fragment:fragment:1.1.0"
-    implementation "androidx.fragment:fragment-ktx:1.1.0"
+    implementation "androidx.recyclerview:recyclerview:$androidxVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
