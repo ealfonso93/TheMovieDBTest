@@ -3,9 +3,7 @@ package com.example.movieapi.repository
 import androidx.annotation.MainThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.example.movieapi.models.PopularShowResponse
 import com.example.movieapi.models.Show
-import com.example.movieapi.network.ApiResponse
 import com.example.movieapi.network.MovieService
 import javax.inject.Inject
 import javax.inject.Singleton
