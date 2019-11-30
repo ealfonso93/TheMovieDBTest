@@ -1,6 +1,8 @@
 package com.example.movieapi.ui.main.list
 
 import android.view.View
+import com.bumptech.glide.Glide
+import com.example.movieapi.models.ApiUtils
 import com.example.movieapi.models.Show
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 import kotlinx.android.synthetic.main.item_show.view.*
@@ -21,6 +23,10 @@ class PopularShowViewHolder(val view: View, private val listener: OnClickListene
             show = data
             itemView.run {
                 show_title.text = show.name
+                show_rating.text = show.vote_average.toString()
+                Glide.with(context)
+                    .load(ApiUtils.getPosterUrl(show.poster_path))
+                    .into(show_image)
             }
         }
     }

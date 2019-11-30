@@ -24,7 +24,7 @@ class MainActivity: ViewModelActivity(), PopularShowViewHolder.OnClickListener{
         }
 
         recyclerView.adapter = PopularShowsListAdapter(this)
-        recyclerView.layoutManager = GridLayoutManager(applicationContext, 3)
+        recyclerView.layoutManager = GridLayoutManager(applicationContext, 2)
     }
 
     override fun onItemClick(show: Show) {
