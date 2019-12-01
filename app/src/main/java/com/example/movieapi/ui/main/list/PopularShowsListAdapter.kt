@@ -18,8 +18,9 @@ class PopularShowsListAdapter(private val onClickListener: PopularShowViewHolder
     }
 
     fun addShows(shows: List<Show>) {
+        val firstNewItemPosition = sections()[0].size
         sections()[0].addAll(shows)
-        notifyDataSetChanged()
+        notifyItemRangeInserted(firstNewItemPosition, shows.size)
     }
 
     override fun layout(sectionRow: SectionRow) = R.layout.item_show
