@@ -48,6 +48,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.recyclerview:recyclerview:$androidxVersion"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$androidxSwipeRefreshVersion"
     implementation "androidx.cardview:cardview:$cardViewVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
