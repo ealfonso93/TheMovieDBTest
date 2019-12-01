@@ -24,8 +24,10 @@ constructor(val movieService: MovieService): Repository {
                     response.body?.let {
                         result.postValue(Resource.success(it.results, isLastPage(response.body)))
                     }
-                //false ->
-                    //TODO what if it goes wrong
+                false ->
+                    response.message?.let {
+                        result.postValue(Resource.error(it,null))
+                    }
             }
         }
         return result
