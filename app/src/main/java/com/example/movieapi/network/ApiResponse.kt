@@ -1,5 +1,6 @@
 package com.example.movieapi.network
 
+import android.util.Log
 import retrofit2.Response
 import java.io.IOException
 
@@ -32,7 +33,7 @@ class ApiResponse<T> {
                 try {
                     errorMessage = response.errorBody()!!.string()
                 } catch (ex: IOException) {
-                    //TODO
+                    Log.e("Exception", ex.toString(), ex)
                 }
             }
 
