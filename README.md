@@ -1,4 +1,4 @@
-# LetGo Android challenge
+# TheMovieDB Android challenge
 
 ## Architecture
 
@@ -25,12 +25,12 @@ Any class dependency is injected using dagger.
 - Cardview: Used for each list item to give that "card" (as the library name suggests) look.
 - RecyclerView: This View holds all items and display them, also it's "relatively" easy to append items for the lazy load.
 - Constraintlayout: Used for each RecyclerView item to be able to have a strong looking UI (say goodbye to RelativeLayout and nested LinearLayouts).
-- [BaseRecyclerViewAdapter](https://github.com/skydoves/BaseRecyclerViewAdapter): Library to heal deal with the RecyclerView lazy load and adapter itself.
-- Glide: Library to help loading images from a url (even though it can do much more it's only used to deal with that here)
+- [BaseRecyclerViewAdapter](https://github.com/skydoves/BaseRecyclerViewAdapter): Library to help deal with the RecyclerView lazy load and adapter itself.
+- Glide: Library to help loading images from a url (even though it can do much more it's only used to deal with that here).
 
 ##### Testing
-- JUnit: Very popular and useful library to test anything Java related
-- Espresso: Library to help with UI testing
-- [MockitoKotlin](https://github.com/nhaarman/mockito-kotlin): Similar library to mockito but made for Kotlin, since mockito doesn't always play well with Kotlin
-- MockWebserver: Great helper library to mock server responses
+- JUnit: Very popular and useful library to test anything Java related.
+- Espresso: Library to help with UI testing.
+- [MockitoKotlin](https://github.com/nhaarman/mockito-kotlin): Similar library to mockito but made for Kotlin, since mockito doesn't always play well with Kotlin.
+- MockWebserver: Great helper library to mock server responses.
 
