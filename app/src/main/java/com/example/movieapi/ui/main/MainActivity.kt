@@ -1,7 +1,6 @@
 package com.example.movieapi.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movieapi.R
 import com.example.movieapi.base.ViewModelActivity
@@ -11,7 +10,6 @@ import com.example.movieapi.models.Status
 import com.example.movieapi.ui.main.list.PopularShowViewHolder
 import com.example.movieapi.ui.main.list.PopularShowsListAdapter
 import com.skydoves.baserecyclerviewadapter.RecyclerViewPaginator
-import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity: ViewModelActivity(), PopularShowViewHolder.OnClickListener{

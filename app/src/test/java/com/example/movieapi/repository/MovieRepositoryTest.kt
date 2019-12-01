@@ -11,7 +11,6 @@ import com.example.movieapi.network.ApiResponse
 import com.example.movieapi.network.MovieService
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.nhaarman.mockitokotlin2.whenever
 import org.junit.Before
 import org.junit.Rule

@@ -1,7 +1,6 @@
 package com.example.movieapi.network
 
 import androidx.lifecycle.LiveData
-import com.example.movieapi.network.ApiResponse
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType

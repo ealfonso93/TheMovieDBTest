@@ -1,12 +1,9 @@
 package com.example.movieapi.ui.main.list
 
 import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapi.R
 import com.example.movieapi.models.Show
 import com.skydoves.baserecyclerviewadapter.BaseAdapter
-import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 import com.skydoves.baserecyclerviewadapter.SectionRow
 
 class PopularShowsListAdapter(private val onClickListener: PopularShowViewHolder.OnClickListener):

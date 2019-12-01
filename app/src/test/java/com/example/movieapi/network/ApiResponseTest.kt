@@ -1,6 +1,5 @@
 package com.example.movieapi.network
 
-import com.example.movieapi.network.ApiResponse
 import retrofit2.Response
 import org.junit.Assert.*
 import org.junit.Test
